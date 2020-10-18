@@ -7,6 +7,7 @@ public class MarkovChain
     protected final LinkedList<Node> nodes;
     protected final LinkedList<Double> waitingTime;
     public Double totalTime;
+
     public MarkovChain()
     {
         this.totalTime = 0.0;

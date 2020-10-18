@@ -1,6 +1,8 @@
 public class Pair
 {
     public Node node;
+    public Double probability;
+    public Integer rate;
 
     public Node getNode()
     {
@@ -32,8 +34,6 @@ public class Pair
         this.rate = rate;
     }
 
-    public Double probability;
-    public Integer rate;
 
     Pair(Node _x) {
         node = _x;
