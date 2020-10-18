@@ -4,6 +4,12 @@ public class Pair
     public Double probability;
     public Integer rate;
 
+    Pair(Node _x) {
+        node = _x;
+        probability = 0.0;
+        rate = 0;
+    }
+
     public Node getNode()
     {
         return node;
@@ -32,12 +38,5 @@ public class Pair
     public void setRate(Integer rate)
     {
         this.rate = rate;
-    }
-
-
-    Pair(Node _x) {
-        node = _x;
-        probability = 0.0;
-        rate = 0;
     }
 }
