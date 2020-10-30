@@ -22,7 +22,7 @@ public class MarkovChain
 
     public Node get(int nb)
     {
-        return (this.nodes.get(nb));
+        return this.nodes.get(nb);
     }
 
     public void shuffleNodes()
@@ -35,7 +35,7 @@ public class MarkovChain
     public void enableSelfTransition()
     {
         for (Node node : nodes) {
-            node.addNode(node);
+            node.addTransition(node);
         }
     }
 
@@ -53,7 +53,7 @@ public class MarkovChain
     {
         ArrayList<Double> array = new ArrayList<Double>();
 
-        return (array);
+        return array;
     }
 
     public String toString() {
@@ -62,7 +62,7 @@ public class MarkovChain
         for (Node node : this.nodes) {
             builder.append(node);
         }
-        return (builder.toString());
+        return builder.toString();
     }
 
     public Node getRandomNode() {

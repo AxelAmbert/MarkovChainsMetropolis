@@ -31,7 +31,7 @@ public class DiscreteMarkovChain extends MarkovChain
         if (remainder < 0.0)
             remainder = 0.0;
         array.add(remainder);
-        return (array);
+        return array;
     }
 
     public void addWaitingTime(Node node)

@@ -1,4 +1,3 @@
-import java.text.Collator;
 import java.util.*;
 
 public class Simulation
@@ -65,7 +64,7 @@ public class Simulation
                 return (t.get(i).node);
             }
         }
-        return (t.get(t.size() - 1).node);
+        return t.get(t.size() - 1).node;
     }
 
 
@@ -76,17 +75,17 @@ public class Simulation
 
         connections.sort((o1, o2) -> {
             if (o1.probability.equals(o2.probability)) {
-                return (0);
+                return 0;
             } else if (o1.probability > o2.probability) {
-                return (-1);
+                return -1;
             }
-            return (1);
+            return 1;
         });
         connections.forEach((pair) -> {
             probabilities.add(pair.probability);
         });
         connections.add(0, new Pair(null));
-        return (connections);
+        return connections;
     }
 
     public void setupMarkovChain()
@@ -97,7 +96,7 @@ public class Simulation
         int i = 0;
         for (Integer[] subArr : this.links) {
             for (Integer integer : subArr) {
-                markovChain.get(i).addNode(markovChain.get(integer - 1));
+                markovChain.get(i).addTransition(markovChain.get(integer - 1));
             }
             i++;
         }

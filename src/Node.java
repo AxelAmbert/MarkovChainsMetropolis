@@ -13,7 +13,7 @@ public class Node
         this.transitions = new LinkedList<>();
     }
 
-    public void addNode(Node toAdd)
+    public void addTransition(Node toAdd)
     {
         for (Pair pair : this.transitions) {
             if (pair.node.nb == toAdd.nb)
@@ -31,7 +31,7 @@ public class Node
         for (Pair pair : this.transitions) {
             nodes.add(pair.node);
         }
-        return (nodes);
+        return nodes;
     }
 
     public LinkedList<Pair> getConnectionProbabilites()
@@ -61,7 +61,7 @@ public class Node
         for (Pair pair : this.transitions) {
             builder.append("[NODE ").append(pair.node.nb).append("] - [PROBABITY ").append(pair.probability).append("]\n\r");
         }
-        return (builder.toString());
+        return builder.toString();
     }
 
     public void setProbabilities(ArrayList<Double> probabilities)
@@ -75,6 +75,8 @@ public class Node
             i++;
         }
     }
+
+
 
     public void setRates(ArrayList<Integer> rates)
     {

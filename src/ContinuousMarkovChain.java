@@ -23,7 +23,7 @@ public class ContinuousMarkovChain extends MarkovChain
         for (int i = 0; i < nb; i++) {
             rates.add(Math.abs(random.nextInt() % 50));
         }
-        return (rates);
+        return rates;
     }
 
     public ArrayList<Double> getRandomValues(ArrayList<Integer> rates) {
@@ -39,7 +39,7 @@ public class ContinuousMarkovChain extends MarkovChain
             probability = (double)rates.get(i) / (double)sum;
             probabilities.add(probability);
         }
-        return (probabilities);
+        return probabilities;
     }
 
     public void addWaitingTime(Node node)
